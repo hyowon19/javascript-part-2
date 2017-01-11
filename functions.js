@@ -39,3 +39,17 @@ function cmpEmail (a, b) {
 
 console.log(myArray.sort(cmpName));
 console.log(myArray.sort(cmpEmail));
+
+
+// Create a function that can be used with Array.prototype.map. 
+// This function should be able to take an object and square its “num” property. 
+// Then, use this function with map on an array of objects each containming a “num” property.
+var myArray = [77, 3, 45, 2, 9]
+
+function squareNum (x) {
+    return x * x;
+}
+
+console.log(myArray.map(squareNum));
+
+
