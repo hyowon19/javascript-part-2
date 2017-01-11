@@ -65,3 +65,49 @@ var myArray2 = [
 console.log(myArray2.map(function(x) {
     return x.num * x.num;
 }));
+
+// In a previous workshop, you had to create a function that took two numbers and 
+// an operation (add, sub, mult, …) and returned the result of the operation on the 
+// two numbers. Here we are going to do the same but at a higher order. Create a function 
+// called operationMaker that takes only a string called operation as argument. This string 
+// could be “add”, “subtract”, “mult” or “div”. Your function will return a function that 
+// will take two numbers and return the result of running operation on these numbers.
+function operationMaker(operation) {
+    if(operation === "add".toLowerCase()) {
+        return function add(a, b) {
+            return a + b;
+        }
+    }
+    else if (operation === "subtract".toLowerCase()) {
+        return function subtract(a, b) {
+            return a - b;
+        }
+    }
+    else if (operation === "mult".toLowerCase()) {
+        return function multiply(a, b) {
+            return a * b;
+        }
+    }
+    else if (operation === "div".toLowerCase()) {
+        return function divide(a, b) {
+            return a / b;
+        }
+    }
+}
+
+var adder = operationMaker("add");
+var sum = adder(5, 80);
+
+var subtractor = operationMaker("subtract");
+var diff = subtractor(76, 9888);
+
+var multiplier = operationMaker("mult");
+var product = multiplier(25, 25);
+
+var divider = operationMaker("div");
+var quotient = divider(20, 4);
+
+console.log(sum);
+console.log(diff);
+console.log(product);
+console.log(quotient);
