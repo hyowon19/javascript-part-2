@@ -42,8 +42,8 @@ console.log(myArray.sort(cmpEmail));
 
 
 // Create a function that can be used with Array.prototype.map. 
-// This function should be able to take an object and square its “num” property. 
-// Then, use this function with map on an array of objects each containming a “num” property.
+// This function should take a number and return its square. Then, use this 
+// function with map on an array of numbers to check the result.
 var myArray = [77, 3, 45, 2, 9]
 
 function squareNum (x) {
@@ -52,4 +52,16 @@ function squareNum (x) {
 
 console.log(myArray.map(squareNum));
 
+// Create a function that can be used with Array.prototype.map. 
+// This function should be able to take an object and square its “num” property. 
+// Then, use this function with map on an array of objects each containming a “num” property.
+var myArray2 = [
+    {name: "Victor", num: 12},
+    {name: "Benny", num: 234},
+    {name: "Choa", num: 45},
+    {name: "Hootlah", num: 32}
+];
 
+console.log(myArray2.map(function(x) {
+    return x.num * x.num;
+}));
