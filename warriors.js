@@ -10,20 +10,21 @@ function Warrior (name, gender) {
             var pronoun = "her";
         }
         console.log (this.name + " " + "rushes to the arena with " + pronoun + " " + this.weapon)
-        }
     };
-    this.faceoff = function(opponent){
+    this.faceoff = function(opponent) {
         var winner = opponent.name;
         if (this.power > opponent.power) {
             var winner = this.name;
         }
-        console.log(winner + " " + "won the fight!")
+        console.log(winner + " " + "won the fight!");
     };
+};
 var Gundam = new Warrior("Gundam", "m");
 var Peach = new Warrior("Peach", "f");
 var R2D2 = new Warrior("R2D2", "m");
 var Ronin = new Warrior("Ronin", "m");
 
-
-console.log(Gundam.gender);
-// console.log(Gundam.faceoff(Peach));
+console.log(Peach.faceoff(Gundam));
+console.log(Ronin.faceoff(Peach));
+console.log(Gundam.faceoff(R2D2));
+console.log(R2D2.faceoff(Ronin));
