@@ -2,17 +2,26 @@ function Person (firstName, lastName) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.emails = [];
-    this.addEmail = function(Email, type) {
-        
-    }
 };
+
+Person.prototype.addEmail = function (address, type) {
+    this.emails.push(new Email(address, type));
+}
 
 function Email (address, type) {
     this.address = address;
-    this.type = function(type) {
-        var tempType = this.type;
-        if(!(this.type.toLowerCase() === "work") && !(this.type.toLowerCase() === "home")) {
-           tempType = "other"; 
-        }
+    if(type.toLowerCase() === "work"){
+        this.type = type;
+    }
+    else if(type.toLowerCase() === "home") {
+        this.type = type;
+    }
+    else {
+        this.type = "other";
     }
 }
+
+var Judy = new Person("Judy", "Lane");
+Judy.addEmail("judy123@example.com", "work");
+
+console.log(Judy);
